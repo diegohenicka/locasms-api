@@ -32,11 +32,11 @@ class LocaSMS {
         $this->senha = $senha;
     }
 
-    function enviarSMS($msg, $numeros, $callback = '', $jobdata = '', $jobtime = ''){
+    function enviarSMS($msg, $numeros, $callback = '', $jobdate = '', $jobtime = ''){
         $this->msg    = $msg;
         $this->numeros = $numeros;
         $this->callback = $callback;
-        $this->jobdata  = $jobdata;
+        $this->jobdate  = $jobdate;
         $this->jobtime  = $jobtime;
         $requestData = array(
             'lgn'           => $this->login,
@@ -48,8 +48,8 @@ class LocaSMS {
         if ($this->callback != '') {            
             $requestData['callback'] = $this->callback;
         }
-        if ($this->jobdata != '') {            
-            $requestData['jobdata'] = $this->jobdata;
+        if ($this->jobdate != '') {            
+            $requestData['jobdate'] = $this->jobdate;
         }
         if ($this->jobtime != '') {            
             $requestData['jobtime'] = $this->jobtime;
